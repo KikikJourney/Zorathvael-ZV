@@ -11,11 +11,12 @@ class ProjectIntegrityTests(unittest.TestCase):
     def test_expected_public_documents_exist(self):
         for relative in (
             "README.md",
-            "TOKEN-INFO.md",
             "docs/TOKEN-INFO.md",
             "docs/ROADMAP.md",
             "SECURITY.md",
             "CONTRIBUTING.md",
+            "docs/FAQ.md",
+            "CODE_OF_CONDUCT.md",
             "assets/logo.svg",
             ".github/workflows/quality.yml",
         ):
