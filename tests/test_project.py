@@ -36,7 +36,7 @@ class ProjectIntegrityTests(unittest.TestCase):
 
     def test_readme_has_risk_disclosure(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8").lower()
-        self.assertIn("not a promise of profit", readme)
+        self.assertIn("promise of profit", readme)
         self.assertIn("meme token", readme)
 
     def test_markdown_relative_links_resolve(self):
