@@ -1,0 +1,27 @@
+name: Proposal
+description: Propose a transparent, testable improvement for Zorathvael documentation or tooling.
+title: "[Proposal]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: "Proposals are not promises of delivery, token utility, or financial return."
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence, risks, and acceptance criteria
+      description: Explain how the change could be validated and what risks it introduces.
+    validations:
+      required: true
