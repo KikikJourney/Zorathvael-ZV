@@ -1,0 +1,33 @@
+name: Documentation or repository issue
+description: Report an error, broken link, or verifiable project information issue.
+title: "[Issue]: "
+labels: ["triage"]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not include private keys, seed phrases, passwords, or personal financial information."
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Incorrect token information
+        - Broken link or documentation
+        - Security concern
+        - Repository automation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What is wrong?
+      description: Include the file path, evidence, and reproducible steps where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
