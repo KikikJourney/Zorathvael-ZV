@@ -36,13 +36,14 @@ This is the public documentation and project-maintenance home for Zorathvael (ZV
 
 ## Verification status
 
-The mint address above was supplied by the project owner and recorded here. On-chain metadata, decimals, supply, and mint/freeze authority status must be checked against live chain data; this repository does not label them verified without recorded evidence. See [Token Information](docs/TOKEN-INFO.md) for the verification procedure.
+The mint address above was supplied by the project owner and recorded here. A read-only Solana mainnet-beta RPC check recorded decimals, supply, token program, and mint/freeze authority status on 2026-10-12 18:32:32 UTC. Display metadata, liquidity, holder distribution, and market claims are not asserted as verified. See [Token Information](docs/TOKEN-INFO.md) for the verification procedure.
 
 - [x] Public repository established.
 - [x] Token identifier and risk disclosures documented.
 - [x] Security and contribution guidance added.
 - [x] Vector brand mark committed to `assets/logo.svg`.
-- [ ] On-chain metadata and authorities independently verified and evidence recorded.
+- [x] Mint program, decimals, supply, and mint/freeze authority snapshot recorded in [Token Information](docs/TOKEN-INFO.md).
+- [ ] Display metadata, liquidity, holder distribution, and market claims independently verified.
 - [ ] Official community channels verified and linked.
 - [ ] Any future code or integrations independently reviewed and tested.
 
