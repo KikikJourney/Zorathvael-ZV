@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="Zorathvael (ZV) logo" width="240">
+  <img src="assets/logo.svg" alt="Zorathvael (ZV) logo" width="240">
 </p>
 
 <h1 align="center">Zorathvael (ZV)</h1>
@@ -36,13 +36,13 @@ This is the public documentation and project-maintenance home for Zorathvael (ZV
 
 ## Verification status
 
-The mint address above was supplied by the project owner and recorded here. Independent verification of on-chain metadata, decimals, supply, and mint/freeze authority status remains pending. See [Token Information](docs/TOKEN-INFO.md) for the verification procedure.
+The mint address above was supplied by the project owner and recorded here. On-chain metadata, decimals, supply, and mint/freeze authority status must be checked against live chain data; this repository does not label them verified without recorded evidence. See [Token Information](docs/TOKEN-INFO.md) for the verification procedure.
 
 - [x] Public repository established.
 - [x] Token identifier and risk disclosures documented.
 - [x] Security and contribution guidance added.
-- [ ] Official logo file committed to `assets/logo.png`.
-- [ ] On-chain metadata and authorities independently verified.
+- [x] Vector brand mark committed to `assets/logo.svg`.
+- [ ] On-chain metadata and authorities independently verified and evidence recorded.
 - [ ] Official community channels verified and linked.
 - [ ] Any future code or integrations independently reviewed and tested.
 
@@ -54,7 +54,9 @@ A checklist item is not an audit or endorsement. Do not interpret pending tasks 
 - [Roadmap](docs/ROADMAP.md)
 - [Security policy](SECURITY.md)
 - [Contribution guide](CONTRIBUTING.md)
-- `assets/` — official artwork (logo file upload pending)
+- [FAQ](docs/FAQ.md)
+- [Community Code of Conduct](CODE_OF_CONDUCT.md)
+- `assets/logo.svg` — scalable vector brand mark
 
 ## Security principles
 
