@@ -9,7 +9,22 @@
 - **Token page:** https://pump.fun/coin/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump
 - **Explorer:** https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump
 
-The address above is recorded from information supplied by the project owner. Its on-chain metadata and authority status have **not yet been independently audited by this repository**. Do not treat the text in this file as proof of ownership, legitimacy, safety, or value.
+The address above was supplied by the project owner. A read-only Solana mainnet-beta JSON-RPC check confirmed the mint account and the following point-in-time values on **2026-10-12 18:32:32 UTC**. This is an on-chain state snapshot, not a security audit or proof of ownership, legitimacy, safety, or value.
+
+## Recorded on-chain snapshot — 2026-10-12 18:32:32 UTC
+
+Source: GitHub Actions [On-chain mint verification](https://github.com/KikikJourney/Zorathvael-ZV/actions/workflows/onchain-verification.yml) using Solana mainnet-beta JSON-RPC at `confirmed` commitment.
+
+| Field | Observed value |
+|---|---|
+| Mint account | Found; parsed as a token mint |
+| Token program | Token-2022 (`TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb`) |
+| Decimals | `6` |
+| Total supply reported by RPC | `1,000,000,000` tokens (`1000000000000000` base units) |
+| Mint authority | `null` (no active mint authority reported) |
+| Freeze authority | `null` (no active freeze authority reported) |
+
+This snapshot does not independently verify display name/symbol metadata, liquidity, holder distribution, or market conditions. Re-run the workflow for a fresh snapshot; on-chain facts can change where the token standard permits it.
 
 ## Verification procedure
 
@@ -27,9 +42,7 @@ Before recording additional token facts:
 
 Until independently checked, this repository makes no claim about:
 
-- current circulating or total supply;
-- decimals;
-- mint authority or freeze authority status;
+- display name/symbol metadata and metadata update authority;
 - liquidity amount, lock duration, or burn status;
 - holders, concentration, market capitalization, or trading volume;
 - audits, partnerships, exchange listings, or token utility;
