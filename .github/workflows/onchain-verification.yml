@@ -1,6 +1,8 @@
 name: On-chain mint verification
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
   schedule:
     - cron: "17 8 * * 1"
