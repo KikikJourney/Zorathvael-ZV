@@ -18,7 +18,10 @@ class ProjectIntegrityTests(unittest.TestCase):
             "docs/FAQ.md",
             "CODE_OF_CONDUCT.md",
             "assets/logo.svg",
+            "scripts/verify_onchain.py",
             ".github/workflows/quality.yml",
+            ".github/workflows/onchain-verification.yml",
+            "docs/VERIFICATION.md",
         ):
             with self.subTest(path=relative):
                 self.assertTrue((ROOT / relative).is_file(), relative)
