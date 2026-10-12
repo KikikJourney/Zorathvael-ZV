@@ -51,6 +51,8 @@ A checklist item is not an audit or endorsement. Do not interpret pending tasks 
 ## Repository map
 
 - [Token information and verification checklist](docs/TOKEN-INFO.md)
+- [On-chain verification procedure](docs/VERIFICATION.md)
+- [FAQ](docs/FAQ.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Security policy](SECURITY.md)
 - [Contribution guide](CONTRIBUTING.md)
