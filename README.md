@@ -32,6 +32,10 @@ Zorathvael (ZV) is documented here across two separate networks. **The Solana mi
 
 The supply figure for **each network is one billion ZV**. The values above are network-specific on-chain observations with the timestamps noted; re-check the explorers or run the verification workflows for current state. Supply is not the same as circulating supply, liquidity, holder count, or trading volume.
 
+## Ecosystem dashboard
+
+The first functional ecosystem interface is [`app/index.html`](app/index.html). It reads live supply/decimals from public RPC endpoints for both networks and, after a user clicks Connect, can read the connected wallet's public ZV balance. It is intentionally read-only: no signing, approvals, transfers, staking, rewards, swap, or bridge. Open it from a static HTTPS host or a wallet-compatible browser; local/file previews may block RPC requests or wallet providers. Architecture and remaining security gates: [Ecosystem architecture](docs/ECOSYSTEM-ARCHITECTURE.md).
+
 ## Market status
 
 A token page or deployed contract does **not** by itself prove that a usable buy/sell market exists. Pool liquidity, swap routing, actual trades, holder distribution, and current market status must be checked independently on each network. Do not interpret transfers alone as proof of purchases, and do not claim buyers, liquidity, or trading activity without evidence.
@@ -46,7 +50,7 @@ A blockchain explorer is a starting point for verification, not proof of legitim
 
 ## Purpose and limitations
 
-This repository is the public documentation and project-maintenance home for Zorathvael (ZV). It does not claim that ZV has its own blockchain, validator network, audited smart contract, bridge, guaranteed utility, exchange listing, or guaranteed roadmap delivery. No cross-chain bridge or one-to-one backing is implied by documenting both networks together.
+This repository is the public development and documentation home for Zorathvael (ZV). The first read-only ecosystem dashboard is implemented, but the project does not claim its own blockchain, validator network, audited smart contract, bridge, staking/rewards, swap, or production token utility. No cross-chain bridge or one-to-one backing is implied by documenting both networks together.
 
 ## Security principles
 
@@ -64,6 +68,8 @@ This repository is the public documentation and project-maintenance home for Zor
 - `.github/workflows/bnb-verification.yml` — automated BNB verification workflow
 - `scripts/verify_onchain.py` — read-only Solana mint verifier
 - `.github/workflows/onchain-verification.yml` — automated Solana verification workflow
+- `app/index.html` — read-only ecosystem dashboard for both token instances
+- `docs/ECOSYSTEM-ARCHITECTURE.md` — architecture, security gates, and remaining work
 - `docs/TOKEN-INFO.md` — combined network comparison
 - `docs/VERIFICATION.md` — verification procedure
 - `assets/1791818551418.png` — official logo image supplied by the project owner and used in this README
