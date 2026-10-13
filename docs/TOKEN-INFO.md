@@ -1,19 +1,19 @@
-# Zorathvael (ZV) — Token Information
+# Zorathvael (ZV) — Combined Token Information
 
-## Known identifiers
+This document tracks the project identifiers reported for two separate networks. They are not interchangeable assets. Listing them in one repository does not combine supply, liquidity, holders, ownership, or transferability.
+
+## Solana
 
 - **Project name:** Zorathvael
-- **Ticker:** ZV
+- **Ticker:** ZV (project label)
 - **Network:** Solana
-- **Mint address supplied by the project owner:** `7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump`
+- **Mint:** `7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump`
 - **Token page:** https://pump.fun/coin/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump
 - **Explorer:** https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump
 
-The address above was supplied by the project owner. A read-only Solana mainnet-beta JSON-RPC check confirmed the mint account and the following point-in-time values on **2026-10-12 18:32:32 UTC**. This is an on-chain state snapshot, not a security audit or proof of ownership, legitimacy, safety, or value.
+### Recorded Solana snapshot — 2026-10-12 18:32:32 UTC
 
-## Recorded on-chain snapshot — 2026-10-12 18:32:32 UTC
-
-Source: GitHub Actions [On-chain mint verification](https://github.com/KikikJourney/Zorathvael-ZV/actions/workflows/onchain-verification.yml) using Solana mainnet-beta JSON-RPC at `confirmed` commitment.
+Source: read-only Solana mainnet-beta JSON-RPC snapshot, as recorded by the repository's on-chain verification workflow. This is not a security audit or proof of ownership, legitimacy, safety, or value.
 
 | Field | Observed value |
 |---|---|
@@ -21,33 +21,39 @@ Source: GitHub Actions [On-chain mint verification](https://github.com/KikikJour
 | Token program | Token-2022 (`TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb`) |
 | Decimals | `6` |
 | Total supply reported by RPC | `1,000,000,000` tokens (`1000000000000000` base units) |
-| Mint authority | `null` (no active mint authority reported) |
-| Freeze authority | `null` (no active freeze authority reported) |
+| Mint authority | `null` |
+| Freeze authority | `null` |
 
-This snapshot does not independently verify display name/symbol metadata, liquidity, holder distribution, or market conditions. Re-run the workflow for a fresh snapshot; on-chain facts can change where the token standard permits it.
+This is a point-in-time snapshot. Re-run the workflow for current values. It does not verify liquidity, holders, market conditions, or display metadata.
 
-## Verification procedure
+## BNB Smart Chain
 
-Before recording additional token facts:
+- **Network:** BNB Smart Chain (BSC) — reported by project owner
+- **Contract address supplied by project owner:** `0x2c6b35f3e70500b1189e331547b493904c598888`
+- **Explorer:** https://bscscan.com/token/0x2c6b35f3e70500b1189e331547b493904c598888
+- **Reported supply:** 1,000,000 tokens — **user-provided, not yet independently verified**
+- **Name / symbol / decimals:** not yet independently verified
+- **Contract source verification and owner/admin privileges:** not yet independently verified
 
-1. Open the explorer link and confirm the complete mint address character-for-character.
-2. Compare the mint address with the official token page; never rely on the ticker or logo alone.
-3. Record token decimals and supply only from current on-chain data, with a date and source.
-4. Inspect mint and freeze authority status. Do not claim either authority is revoked unless verified from reliable on-chain state.
-5. Check liquidity and any lock/burn claims independently. A token account balance, a burn claim, and a liquidity lock are not interchangeable.
-6. Record who performed the check, when it was performed (UTC), and the source used.
-7. Have a second reviewer confirm high-impact claims before merging them.
+Do not present the reported supply as confirmed until it is checked against current on-chain data and the contract's decimals. A token's displayed supply and its raw integer `totalSupply()` are not the same value when decimals are applied.
 
-## Facts not yet asserted
+### BNB verification checklist
 
-Until independently checked, this repository makes no claim about:
+- [ ] Open the BscScan page and compare the full contract address.
+- [ ] Confirm the contract is deployed on BNB Smart Chain.
+- [ ] Read the contract's name, symbol, decimals, and `totalSupply()`.
+- [ ] Check whether the source code is verified and inspect owner/admin functions.
+- [ ] Check whether minting, pausing, blacklist, fees, upgradeability, or other privileged controls exist.
+- [ ] Record the observation time (UTC) and sources in a follow-up commit.
+- [ ] Have a second reviewer review high-impact claims.
 
-- display name/symbol metadata and metadata update authority;
-- liquidity amount, lock duration, or burn status;
-- holders, concentration, market capitalization, or trading volume;
-- audits, partnerships, exchange listings, or token utility;
-- legal status or regulatory classification.
+## Cross-network caution
 
-## Updating this document
+The Solana mint and BNB contract are separate token instances. This repository does not assert that one is a wrapped representation of the other, that their supplies are backed one-to-one, or that a bridge exists. Do not add supply figures together as if they were one fungible pool. Verify each address on its own network.
 
-Changes must cite a public, reproducible source and include an observation timestamp. Market data changes quickly; do not commit a snapshot as though it were permanent. Never include private keys, seed phrases, or confidential account data.
+## General verification rules
+
+1. Always compare the full address character-for-character.
+2. Record the source and timestamp for every on-chain snapshot.
+3. Do not claim audits, locked liquidity, burns, ownership, partnerships, exchange listings, or utility without independent evidence.
+4. Never commit seed phrases, private keys, or confidential account data.
