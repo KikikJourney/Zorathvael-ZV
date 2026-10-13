@@ -56,6 +56,8 @@ This is the public documentation and project-maintenance home for Zorathvael (ZV
 
 - `chains/solana.md` — Solana mint and snapshot
 - `chains/bnb-smart-chain.md` — BNB contract and verification checklist
+- `scripts/verify_bnb_contract.py` — read-only BNB contract verifier
+- `.github/workflows/bnb-verification.yml` — automated BNB verification workflow
 - `docs/TOKEN-INFO.md` — combined network comparison
 - `docs/VERIFICATION.md` — Solana verifier procedure
 - `assets/logo.svg` — existing vector brand mark (not the original pump.fun image)
