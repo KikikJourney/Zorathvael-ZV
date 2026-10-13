@@ -31,17 +31,24 @@ This is a point-in-time snapshot. Re-run the workflow for current values. It doe
 - **Network:** BNB Smart Chain (BSC) — reported by project owner
 - **Contract address supplied by project owner:** `0x2c6b35f3e70500b1189e331547b493904c598888`
 - **Explorer:** https://bscscan.com/token/0x2c6b35f3e70500b1189e331547b493904c598888
-- **Reported supply:** 1,000,000 tokens — **user-provided, not yet independently verified**
-- **Name / symbol / decimals:** not yet independently verified
-- **Contract source verification and owner/admin privileges:** not yet independently verified
+- **On-chain name():** `Zorathvael` (read-only RPC, 2026-10-13)
+- **On-chain symbol():** `ZV` (read-only RPC, 2026-10-13)
+- **Decimals:** `18` (read-only RPC, 2026-10-13)
+- **Raw totalSupply():** `1000000000000000000000000000`
+- **Human-readable total supply:** `1,000,000,000 ZV` (read-only RPC, 2026-10-13)
+- **Owner / getOwner result:** `0xe2ce6ab80874fa9fa2aae65d277dd6b8e65c9de0`
+- **Contract bytecode:** present
+- **Source-code verification on BscScan:** not confirmed by RPC; manual explorer review remains required
+
+**Supply discrepancy:** the project owner previously reported 1,000,000 ZV, while the on-chain `totalSupply()` read returned 1,000,000,000 ZV. The verifier correctly flags this mismatch. Resolve the discrepancy before using the earlier one-million figure in public materials.
 
 Do not present the reported supply as confirmed until it is checked against current on-chain data and the contract's decimals. A token's displayed supply and its raw integer `totalSupply()` are not the same value when decimals are applied.
 
 ### BNB verification checklist
 
 - [ ] Open the BscScan page and compare the full contract address.
-- [ ] Confirm the contract is deployed on BNB Smart Chain.
-- [ ] Read the contract's name, symbol, decimals, and `totalSupply()`.
+- [x] Confirm deployed bytecode and read name, symbol, decimals, and `totalSupply()` from public BNB RPC.
+- [ ] Manually confirm BscScan source-code verification and review source/ABI.
 - [ ] Check whether the source code is verified and inspect owner/admin functions.
 - [ ] Check whether minting, pausing, blacklist, fees, upgradeability, or other privileged controls exist.
 - [ ] Record the observation time (UTC) and sources in a follow-up commit.
