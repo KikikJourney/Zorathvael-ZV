@@ -71,4 +71,4 @@ This repository is the public documentation and project-maintenance home for Zor
 
 ## Disclaimer
 
-Cryptocurrency assets are risky, speculative, and may be illiquid. Nothing in this repository promises profit, price performance, liquidity, exchange listing, or future development. On-chain and market information can change; independently verify current facts before acting.
+Cryptocurrency assets are risky, speculative, and may be illiquid. Nothing in this repository is a promise of profit, price performance, liquidity, exchange listing, or future development. On-chain and market information can change; independently verify current facts before acting.
