@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="Zorathvael (ZV) logo" width="240">
+  <img src="assets/1791818551418.png" alt="Zorathvael (ZV) official logo" width="240">
 </p>
 
 <h1 align="center">Zorathvael (ZV)</h1>
@@ -64,7 +64,8 @@ This repository is the public documentation and project-maintenance home for Zor
 - `.github/workflows/bnb-verification.yml` — automated BNB verification workflow
 - `docs/TOKEN-INFO.md` — combined network comparison
 - `docs/VERIFICATION.md` — verification procedure
-- `assets/logo.svg` — vector brand mark currently in the repository (not the original pump.fun image)
+- `assets/1791818551418.png` — official logo image supplied by the project owner and used in this README
+- `assets/logo.svg` — legacy vector mark retained for reference; it is no longer the primary README logo
 - `SECURITY.md` — security policy
 - `CONTRIBUTING.md` — contribution guide
 - `CODE_OF_CONDUCT.md` — community code of conduct
