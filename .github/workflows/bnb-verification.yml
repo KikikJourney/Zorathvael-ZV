@@ -28,3 +28,7 @@ jobs:
           python-version: "3.12"
       - name: Query BNB Smart Chain public RPC
         run: python scripts/verify_bnb_contract.py
+      - name: Verify published source metadata through Etherscan V2
+        env:
+          ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
+        run: python scripts/verify_bnb_etherscan.py
