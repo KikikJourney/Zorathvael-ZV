@@ -30,6 +30,8 @@ jobs:
           mkdir -p _site
           cp -R app/. _site/
           cp -R assets _site/assets
+          # app/index.html uses ../assets from the repository; at site root it becomes assets/.
+          sed -i 's|../assets/|assets/|g' _site/index.html
           touch _site/.nojekyll
           test -s _site/index.html
       - name: Upload Pages artifact
