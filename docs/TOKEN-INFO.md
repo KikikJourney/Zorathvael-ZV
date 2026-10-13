@@ -7,9 +7,9 @@ This document tracks the project identifiers reported for two separate networks.
 - **Project name:** Zorathvael
 - **Ticker:** ZV (project label)
 - **Network:** Solana
-- **Mint:** `7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump`
-- **Token page:** https://pump.fun/coin/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump
-- **Explorer:** https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump
+- **Mint:** `7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump`
+- **Token page:** https://pump.fun/coin/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump
+- **Explorer:** https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump
 
 ### Recorded Solana snapshot — 2026-10-12 18:32:32 UTC
 
