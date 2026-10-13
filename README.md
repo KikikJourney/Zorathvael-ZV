@@ -62,10 +62,11 @@ This repository is the public documentation and project-maintenance home for Zor
 - `chains/bnb-smart-chain.md` — BNB contract details and verification evidence
 - `scripts/verify_bnb_contract.py` — read-only BNB contract verifier
 - `.github/workflows/bnb-verification.yml` — automated BNB verification workflow
+- `scripts/verify_onchain.py` — read-only Solana mint verifier
+- `.github/workflows/onchain-verification.yml` — automated Solana verification workflow
 - `docs/TOKEN-INFO.md` — combined network comparison
 - `docs/VERIFICATION.md` — verification procedure
 - `assets/1791818551418.png` — official logo image supplied by the project owner and used in this README
-- `assets/1791818551418.png` — official logo image used in the README
 - `SECURITY.md` — security policy
 - `CONTRIBUTING.md` — contribution guide
 - `CODE_OF_CONDUCT.md` — community code of conduct
