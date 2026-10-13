@@ -28,6 +28,7 @@ class ProjectIntegrityTests(unittest.TestCase):
             ".github/workflows/onchain-verification.yml",
             "docs/VERIFICATION.md",
             "docs/ECOSYSTEM-ARCHITECTURE.md",
+            "docs/BNB-PRELIMINARY-SECURITY-REVIEW.md",
             "app/index.html",
         ):
             with self.subTest(path=relative):
