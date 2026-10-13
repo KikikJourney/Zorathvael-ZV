@@ -17,7 +17,7 @@ class ProjectIntegrityTests(unittest.TestCase):
             "CONTRIBUTING.md",
             "docs/FAQ.md",
             "CODE_OF_CONDUCT.md",
-            "assets/logo.svg",
+            "assets/1791818551418.png",
             "scripts/verify_onchain.py",
             "scripts/verify_bnb_contract.py",
             ".github/workflows/bnb-verification.yml",
@@ -38,8 +38,8 @@ class ProjectIntegrityTests(unittest.TestCase):
 
     def test_readme_points_to_committed_logo(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.assertIn("assets/logo.svg", readme)
-        self.assertTrue((ROOT / "assets/logo.svg").is_file())
+        self.assertIn("assets/1791818551418.png", readme)
+        self.assertTrue((ROOT / "assets/1791818551418.png").is_file())
 
     def test_readme_has_risk_disclosure(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8").lower()
