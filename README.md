@@ -14,35 +14,39 @@
   <a href="https://github.com/KikikJourney/Zorathvael-ZV/issues">Issues</a>
 </p>
 
-> **Risk notice:** ZV is a meme token and may be highly volatile or lose all of its value. This repository is informational, not financial, investment, legal, or tax advice. Never share seed phrases or private keys.
+> **Risk notice:** ZV is a crypto/meme token and may be highly volatile, illiquid, or lose all of its value. This repository is informational, not financial, investment, legal, or tax advice. Never share seed phrases or private keys.
 
 ## Project and network overview
 
-This repository is the shared documentation home for the Zorathvael project across two separate networks. **The Solana mint and the BNB Smart Chain contract are different on-chain assets.** A shared name, ticker, logo, or repository does not make them the same token, automatically bridge them, or combine their supplies, liquidity, holders, or ownership.
+Zorathvael (ZV) is documented here across two separate networks. **The Solana mint and BNB Smart Chain contract are separate on-chain token instances.** A shared name, ticker, logo, or repository does not make them the same asset, automatically bridge them, or combine their supplies, liquidity, holders, or ownership.
 
 | Field | Solana | BNB Smart Chain |
 |---|---|---|
-| Project name | Zorathvael | Reported as Zorathvael; on-chain metadata not yet independently verified |
-| Ticker | ZV (project label) | ZV (project label; on-chain metadata not yet independently verified) |
-| Network | Solana | BNB Smart Chain (BSC) |
-| On-chain identifier | `7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump` | `0x2c6b35f3e70500b1189e331547b493904c598888` |
+| Project name | Zorathvael | Zorathvael |
+| Ticker | ZV | ZV |
+| Network | Solana mainnet | BNB Smart Chain (BSC) |
+| Mint / contract | `7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump` | `0x2c6b35f3e70500b1189e331547b493904c598888` |
+| Decimals | 6 (recorded Solana RPC snapshot) | 18 (read-only RPC check, 2026-10-13) |
+| Total supply | **1,000,000,000 ZV** (recorded RPC snapshot, 2026-10-12) | **1,000,000,000 ZV** (read-only RPC check, 2026-10-13) |
 | Explorer | [Solscan](https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump) | [BscScan](https://bscscan.com/token/0x2c6b35f3e70500b1189e331547b493904c598888) |
-| Supply status | 1,000,000,000 tokens observed in RPC snapshot dated 2026-10-12 18:32:32 UTC | 1,000,000,000 tokens observed via RPC; project owner previously reported 1,000,000 (discrepancy documented) |
 
-- [Solana token details](chains/solana.md)
-- [BNB Smart Chain token details](chains/bnb-smart-chain.md)
-- [Combined token information and verification status](docs/TOKEN-INFO.md)
-- [On-chain verification procedure](docs/VERIFICATION.md)
+The supply figure for **each network is one billion ZV**. The values above are network-specific on-chain observations with the timestamps noted; re-check the explorers or run the verification workflows for current state. Supply is not the same as circulating supply, liquidity, holder count, or trading volume.
+
+## Market status
+
+A token page or deployed contract does **not** by itself prove that a usable buy/sell market exists. Pool liquidity, swap routing, actual trades, holder distribution, and current market status must be checked independently on each network. Do not interpret transfers alone as proof of purchases, and do not claim buyers, liquidity, or trading activity without evidence.
 
 ## Verification status
 
-The Solana mint has a dated read-only RPC snapshot documented in [Token Information](docs/TOKEN-INFO.md). The BNB contract address and 1,000,000-token supply were supplied by the project owner; the BNB contract's name, symbol, decimals, actual supply, source-code verification status, and administrative privileges still need independent checks. Do not treat user-provided details as verified blockchain facts.
+- **Solana:** a read-only mainnet RPC snapshot dated 2026-10-12 recorded 6 decimals, total supply of 1,000,000,000 ZV, and null mint/freeze authorities. This is a point-in-time check, not a security audit or market-status check.
+- **BNB Smart Chain:** a read-only RPC check dated 2026-10-13 returned name `Zorathvael`, symbol `ZV`, 18 decimals, total supply of 1,000,000,000 ZV, and owner/getOwner result `0xe2ce6ab80874fa9fa2aae65d277dd6b8e65c9de0`. BscScan marks the TokenV3 minimal-proxy contract source as verified and identifies implementation `0x88881b6f03090462a969eC7f48385744Eeb63333`. The owner address does not identify a real-world person, and source verification is not a security audit. Implementation-level privileged controls still require review.
+- **Market and holders:** current holder counts, active liquidity pools, and verified buy trades are not asserted by this README; these require a separate current on-chain market audit.
 
-A blockchain explorer page is a starting point for verification, not by itself a security audit or proof of legitimacy, ownership, liquidity, or value. Always compare the full address before interacting with a token.
+A blockchain explorer is a starting point for verification, not proof of legitimacy, safety, ownership, liquidity, or value. Always compare the complete address before interacting with a token.
 
 ## Purpose and limitations
 
-This is the public documentation and project-maintenance home for Zorathvael (ZV). It does not claim that ZV has its own blockchain, validator network, audited smart contract, bridge, utility, exchange listing, or guaranteed roadmap delivery. No cross-chain bridge or supply equivalence is implied by documenting both networks together.
+This repository is the public documentation and project-maintenance home for Zorathvael (ZV). It does not claim that ZV has its own blockchain, validator network, audited smart contract, bridge, guaranteed utility, exchange listing, or guaranteed roadmap delivery. No cross-chain bridge or one-to-one backing is implied by documenting both networks together.
 
 ## Security principles
 
@@ -54,17 +58,17 @@ This is the public documentation and project-maintenance home for Zorathvael (ZV
 
 ## Repository map
 
-- `chains/solana.md` — Solana mint and snapshot
-- `chains/bnb-smart-chain.md` — BNB contract and verification checklist
+- `chains/solana.md` — Solana mint details and recorded RPC snapshot
+- `chains/bnb-smart-chain.md` — BNB contract details and verification evidence
 - `scripts/verify_bnb_contract.py` — read-only BNB contract verifier
 - `.github/workflows/bnb-verification.yml` — automated BNB verification workflow
 - `docs/TOKEN-INFO.md` — combined network comparison
-- `docs/VERIFICATION.md` — Solana verifier procedure
-- `assets/logo.svg` — existing vector brand mark (not the original pump.fun image)
+- `docs/VERIFICATION.md` — verification procedure
+- `assets/logo.svg` — vector brand mark currently in the repository (not the original pump.fun image)
 - `SECURITY.md` — security policy
 - `CONTRIBUTING.md` — contribution guide
 - `CODE_OF_CONDUCT.md` — community code of conduct
 
 ## Disclaimer
 
-Cryptocurrency assets are risky, speculative, and may be illiquid. Nothing in this repository is a promise of profit, price performance, liquidity, exchange listing, or future development. Information can become outdated; independently verify on-chain facts before acting.
+Cryptocurrency assets are risky, speculative, and may be illiquid. Nothing in this repository promises profit, price performance, liquidity, exchange listing, or future development. On-chain and market information can change; independently verify current facts before acting.
