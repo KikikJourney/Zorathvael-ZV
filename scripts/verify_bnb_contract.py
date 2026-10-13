@@ -6,7 +6,7 @@ from decimal import Decimal
 
 CONTRACT = "0x2c6b35f3e70500b1189e331547b493904c598888"
 RPC_URL = os.environ.get("BSC_RPC_URL", "https://bsc-dataseed.binance.org/")
-EXPECTED_SUPPLY = Decimal("1000000")
+EXPECTED_SUPPLY = Decimal("1000000000")
 
 def rpc(method, params):
     payload = json.dumps({"jsonrpc":"2.0","id":1,"method":method,"params":params}).encode()
@@ -83,7 +83,7 @@ if __name__=="__main__":
         result=verify()
         print(json.dumps(result,indent=2,sort_keys=True))
         if not result["reported_supply_matches_onchain"]:
-            print("WARNING: on-chain supply differs from or could not confirm the reported 1,000,000 tokens.",file=sys.stderr)
+            print("WARNING: on-chain supply differs from or could not confirm the expected 1,000,000,000 tokens.",file=sys.stderr)
             sys.exit(2)
     except Exception as exc:
         print(f"VERIFICATION FAILED: {exc}",file=sys.stderr)
