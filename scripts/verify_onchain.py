@@ -137,6 +137,47 @@ def _pubkey_or_none(raw: bytes) -> str | None:
     return "1" * leading_zeroes + (encoded or ("" if leading_zeroes else "1"))
 
 
+def fetch_offchain_metadata(uri: str | None) -> dict:
+    """Fetch public JSON metadata referenced by the mint; never treat it as authenticated."""
+    result = {
+        "offchain_metadata_status": "No metadata URI present",
+        "offchain_name": None,
+        "offchain_symbol": None,
+        "offchain_image": None,
+        "offchain_metadata_uri": uri,
+    }
+    if not uri:
+        return result
+    request = urllib.request.Request(
+        uri,
+        headers={"Accept": "application/json", "User-Agent": "Zorathvael-ZV-verifier/1.1"},
+        method="GET",
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=15) as response:
+            if response.status != 200:
+                result["offchain_metadata_status"] = f"HTTP {response.status}"
+                return result
+            payload = response.read(1_000_001)
+        if len(payload) > 1_000_000:
+            result["offchain_metadata_status"] = "Rejected: metadata JSON exceeds 1 MB"
+            return result
+        body = json.loads(payload.decode("utf-8"))
+        if not isinstance(body, dict):
+            result["offchain_metadata_status"] = "Invalid JSON metadata: expected an object"
+            return result
+        result.update({
+            "offchain_metadata_status": "Fetched JSON; contents are untrusted until independently reviewed",
+            "offchain_name": body.get("name"),
+            "offchain_symbol": body.get("symbol"),
+            "offchain_image": body.get("image"),
+        })
+        return result
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError, ValueError) as exc:
+        result["offchain_metadata_status"] = f"Fetch/parse failed: {type(exc).__name__}: {exc}"
+        return result
+
+
 def verify() -> dict:
     account_result = rpc("getAccountInfo", [MINT, {"encoding": "jsonParsed", "commitment": "confirmed"}])
     account = account_result.get("value")
@@ -183,6 +224,7 @@ def verify() -> dict:
                 "additional_metadata": {},
             }
 
+    offchain = fetch_offchain_metadata(metadata.get("uri"))
     return {
         "checked_at_utc": datetime.now(timezone.utc).isoformat(),
         "network": "Solana mainnet-beta",
@@ -197,10 +239,11 @@ def verify() -> dict:
         "rpc_commitment": "confirmed",
         "metadata_source": "Token-2022 mint account via Solana RPC; no Solscan API key required",
         **metadata,
+        **offchain,
         "interpretation": (
-            "Read-only snapshot. Metadata fields are reported only when decoded from the mint account; "
-            "the URI content and logo are not fetched or authenticated by this check. "
-            "Not a security audit or investment recommendation."
+            "Read-only snapshot. On-chain metadata is decoded from the mint account. Off-chain JSON is "
+            "fetched for inspection only and is not authenticated by this check; the image asset is not "
+            "downloaded or visually verified. Not a security audit or investment recommendation."
         ),
     }
 
