@@ -12,7 +12,7 @@ The workflow [On-chain mint verification](../.github/workflows/onchain-verificat
 
 ## BNB Smart Chain contract
 
-The repository includes `scripts/verify_bnb_contract.py` for contract `0x2c6b35f3e70500b1189e331547b493904c598888`. It queries a public BNB Smart Chain JSON-RPC endpoint for deployed bytecode and standard token read methods (`name()`, `symbol()`, `decimals()`, `totalSupply()`), then compares the decoded human-readable supply with the expected **1,000,000,000 tokens**. It also checks common `owner()` / `getOwner()` methods when available.
+The repository includes `scripts/verify_bnb_contract.py` for contract `0x2c6b35f3e70500b1189e331547b493904c598888`. It queries a public BNB Smart Chain JSON-RPC endpoint for deployed bytecode and standard token read methods (`name()`, `symbol()`, `decimals()`, `totalSupply()`), then compares the decoded human-readable supply with the expected **1,000,000,000 ZV tokens**. It also checks common `owner()` / `getOwner()` methods when available.
 
 ```bash
 python scripts/verify_bnb_contract.py
