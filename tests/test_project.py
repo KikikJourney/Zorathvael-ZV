@@ -27,9 +27,20 @@ class ProjectIntegrityTests(unittest.TestCase):
             ".github/workflows/quality.yml",
             ".github/workflows/onchain-verification.yml",
             "docs/VERIFICATION.md",
+            "docs/ECOSYSTEM-ARCHITECTURE.md",
+            "app/index.html",
         ):
             with self.subTest(path=relative):
                 self.assertTrue((ROOT / relative).is_file(), relative)
+
+    def test_dashboard_is_read_only_and_covers_both_networks(self):
+        app = (ROOT / "app/index.html").read_text(encoding="utf-8")
+        for marker in ("getTokenSupply", "getTokenAccountsByOwner", "eth_call", "eth_requestAccounts", "eth_requestAccounts", "0x70a08231", "7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump", "0x2c6b35f3e70500b1189e331547b493904c598888"):
+            with self.subTest(marker=marker):
+                self.assertIn(marker, app)
+        self.assertNotIn("eth_sendTransaction", app)
+        self.assertNotIn("sendTransaction(", app)
+        self.assertIn("docs/ECOSYSTEM-ARCHITECTURE.md", (ROOT / "README.md").read_text(encoding="utf-8"))
 
     def test_mint_address_is_consistent(self):
         for relative in ("README.md", "docs/TOKEN-INFO.md"):
