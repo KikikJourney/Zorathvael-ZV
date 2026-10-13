@@ -8,8 +8,8 @@
 <p align="center">Audience → Holders → Community → Ecosystem.</p>
 
 <p align="center">
-  <a href="https://pump.fun/coin/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump">Solana / pump.fun</a> ·
-  <a href="https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump">Solscan</a> ·
+  <a href="https://pump.fun/coin/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump">Solana / pump.fun</a> ·
+  <a href="https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump">Solscan</a> ·
   <a href="https://bscscan.com/token/0x2c6b35f3e70500b1189e331547b493904c598888">BNB Chain / BscScan</a> ·
   <a href="https://github.com/KikikJourney/Zorathvael-ZV/issues">Issues</a>
 </p>
@@ -25,8 +25,8 @@ This repository is the shared documentation home for the Zorathvael project acro
 | Project name | Zorathvael | Reported as Zorathvael; on-chain metadata not yet independently verified |
 | Ticker | ZV (project label) | ZV (project label; on-chain metadata not yet independently verified) |
 | Network | Solana | BNB Smart Chain (BSC) |
-| On-chain identifier | `7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump` | `0x2c6b35f3e70500b1189e331547b493904c598888` |
-| Explorer | [Solscan](https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump) | [BscScan](https://bscscan.com/token/0x2c6b35f3e70500b1189e331547b493904c598888) |
+| On-chain identifier | `7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump` | `0x2c6b35f3e70500b1189e331547b493904c598888` |
+| Explorer | [Solscan](https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump) | [BscScan](https://bscscan.com/token/0x2c6b35f3e70500b1189e331547b493904c598888) |
 | Supply status | 1,000,000,000 tokens observed in RPC snapshot dated 2026-10-12 18:32:32 UTC | Project owner reports 1,000,000 tokens; **not yet verified on-chain** |
 
 - [Solana token details](chains/solana.md)
