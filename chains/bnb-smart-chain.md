@@ -17,7 +17,7 @@
 - **Implementation:** `0x88881b6f03090462a969eC7f48385744Eeb63333`
 - **Compiler reported by BscScan:** `v0.8.26+commit.8a97fa7a`
 
-**Important discrepancy:** the project owner previously reported a supply of **1,000,000 ZV**, but the current RPC read reports **1,000,000,000 ZV** (one billion), with 18 decimals. Treat the on-chain read as the observed contract state and resolve the project documentation/communications discrepancy before publishing a supply claim. Do not assume the on-chain figure is a circulating supply figure.
+**Supply interpretation:** the on-chain RPC read reports **1,000,000,000 ZV** with 18 decimals. This is total supply, not necessarily circulating supply. The repository's automated verifier compares against 1,000,000,000 ZV; re-run it to obtain a fresh snapshot.
 
 ## Verification evidence and limitations
 
