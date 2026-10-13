@@ -4,7 +4,7 @@ import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-MINT = "7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump"
+MINT = "7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump"
 
 
 class ProjectIntegrityTests(unittest.TestCase):
@@ -19,6 +19,10 @@ class ProjectIntegrityTests(unittest.TestCase):
             "CODE_OF_CONDUCT.md",
             "assets/logo.svg",
             "scripts/verify_onchain.py",
+            "scripts/verify_bnb_contract.py",
+            ".github/workflows/bnb-verification.yml",
+            "chains/solana.md",
+            "chains/bnb-smart-chain.md",
             ".github/workflows/quality.yml",
             ".github/workflows/onchain-verification.yml",
             "docs/VERIFICATION.md",
