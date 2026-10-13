@@ -49,7 +49,8 @@ Do not present the reported supply as confirmed until it is checked against curr
 - [ ] Open the BscScan page and compare the full contract address.
 - [x] Confirm deployed bytecode and read name, symbol, decimals, and `totalSupply()` from public BNB RPC.
 - [ ] Manually confirm BscScan source-code verification and review source/ABI.
-- [ ] Check whether the source code is verified and inspect owner/admin functions.
+- [x] BscScan source code is marked verified; contract is a TokenV3 minimal proxy.
+- [ ] Review implementation source/ABI and privileged/admin controls; source verification is not a security audit.
 - [ ] Check whether minting, pausing, blacklist, fees, upgradeability, or other privileged controls exist.
 - [ ] Record the observation time (UTC) and sources in a follow-up commit.
 - [ ] Have a second reviewer review high-impact claims.
