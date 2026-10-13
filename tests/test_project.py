@@ -20,6 +20,7 @@ class ProjectIntegrityTests(unittest.TestCase):
             "CODE_OF_CONDUCT.md",
             "assets/1791818551418.png",
             "scripts/verify_onchain.py",
+            "scripts/verify_solscan_api.py",
             "scripts/verify_bnb_contract.py",
             "scripts/verify_bnb_etherscan.py",
             ".github/workflows/bnb-verification.yml",
@@ -37,7 +38,7 @@ class ProjectIntegrityTests(unittest.TestCase):
 
     def test_dashboard_is_read_only_and_covers_both_networks(self):
         app = (ROOT / "app/index.html").read_text(encoding="utf-8")
-        for marker in ("getTokenSupply", "getTokenAccountsByOwner", "eth_call", "eth_requestAccounts", "eth_requestAccounts", "0x70a08231", "7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump", "0x2c6b35f3e70500b1189e331547b493904c598888"):
+        for marker in ("getTokenSupply", "getTokenAccountsByOwner", "eth_call", "eth_requestAccounts", "0x70a08231", MINT, "0x2c6b35f3e70500b1189e331547b493904c598888"):
             with self.subTest(marker=marker):
                 self.assertIn(marker, app)
         self.assertNotIn("eth_sendTransaction", app)
@@ -62,13 +63,13 @@ class ProjectIntegrityTests(unittest.TestCase):
 
     def test_bnb_expected_supply_and_docs_are_consistent(self):
         verifier = (ROOT / "scripts/verify_bnb_contract.py").read_text(encoding="utf-8")
-        self.assertRegex(verifier, r'EXPECTED_SUPPLY\s*=\s*Decimal\("1000000000"\)')
+        self.assertRegex(verifier, r'EXPECTED_SUPPLY\\s*=\\s*Decimal\\("1000000000"\\)')
         for relative in ("README.md", "docs/TOKEN-INFO.md",
                          "docs/VERIFICATION.md", "chains/bnb-smart-chain.md"):
-            text = (ROOT / relative).read_text(encoding="utf-8")
+            content = (ROOT / relative).read_text(encoding="utf-8")
             with self.subTest(path=relative):
-                self.assertIn("1,000,000,000 ZV", text)
-                self.assertNotRegex(text, r"(?<![0-9,])1,000,000 ZV(?![0-9,])")
+                self.assertIn("1,000,000,000 ZV", content)
+                self.assertNotRegex(content, r"(?<![0-9,])1,000,000 ZV(?![0-9,])")
 
     def test_etherscan_v2_check_uses_secret_and_bnb_chain(self):
         script = (ROOT / "scripts/verify_bnb_etherscan.py").read_text(encoding="utf-8")
@@ -80,10 +81,22 @@ class ProjectIntegrityTests(unittest.TestCase):
         self.assertNotIn("eth_sendRawTransaction", script)
         self.assertIn("not an independent security audit", script)
 
+    def test_solscan_api_uses_secret_and_validates_mint_identity(self):
+        script = (ROOT / "scripts/verify_solscan_api.py").read_text(encoding="utf-8")
+        workflow = (ROOT / ".github/workflows/onchain-verification.yml").read_text(encoding="utf-8")
+        self.assertIn("https://pro-api.solscan.io/v2.0/token/meta", script)
+        self.assertIn('os.environ.get("SOLSCAN_API_KEY"', script)
+        self.assertIn("data.get(\"address\") != MINT", script)
+        self.assertIn("EXPECTED_DECIMALS = 6", script)
+        self.assertIn("secrets.SOLSCAN_API_KEY", workflow)
+        self.assertNotIn("SOLSCAN_API_KEY =", script)
+        self.assertNotIn("sendTransaction", script)
+        self.assertIn("does not prove executable liquidity", script)
+
     def test_markdown_relative_links_resolve(self):
         markdown_files = [ROOT / "README.md", ROOT / "SECURITY.md",
                           ROOT / "CONTRIBUTING.md", *((ROOT / "docs").glob("*.md"))]
-        pattern = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+        pattern = re.compile(r"\\[[^\\]]+\\]\\(([^)]+)\\)")
         for file in markdown_files:
             content = file.read_text(encoding="utf-8")
             for target in pattern.findall(content):
