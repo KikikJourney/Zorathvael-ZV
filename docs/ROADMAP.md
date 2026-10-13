@@ -6,7 +6,7 @@ This is a planning document, not a promise of delivery, price performance, token
 - [x] Establish public repository.
 - [x] Document the token identifiers provided by the project owner.
 - [x] Add risk disclosures and contribution/security guidance.
-- [ ] Commit the supplied official logo file.
+- [x] Commit the supplied official logo file.
 - [ ] Independently verify on-chain token metadata and authorities.
 
 ## Phase 1 — Trust and maintenance
