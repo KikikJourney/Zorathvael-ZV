@@ -65,7 +65,7 @@ This repository is the public documentation and project-maintenance home for Zor
 - `docs/TOKEN-INFO.md` — combined network comparison
 - `docs/VERIFICATION.md` — verification procedure
 - `assets/1791818551418.png` — official logo image supplied by the project owner and used in this README
-- `assets/logo.svg` — legacy vector mark retained for reference; it is no longer the primary README logo
+- `assets/1791818551418.png` — official logo image used in the README
 - `SECURITY.md` — security policy
 - `CONTRIBUTING.md` — contribution guide
 - `CODE_OF_CONDUCT.md` — community code of conduct
