@@ -34,7 +34,7 @@ The supply figure for **each network is one billion ZV**. The values above are n
 
 ## Ecosystem dashboard
 
-The first functional ecosystem interface is [`app/index.html`](app/index.html). It reads live supply/decimals from public RPC endpoints for both networks and, after a user clicks Connect, can read the connected wallet's public ZV balance. It is intentionally read-only: no signing, approvals, transfers, staking, rewards, swap, or bridge. Open it from a static HTTPS host or a wallet-compatible browser; local/file previews may block RPC requests or wallet providers. Architecture and remaining security gates: [Ecosystem architecture](docs/ECOSYSTEM-ARCHITECTURE.md).
+The first functional ecosystem interface is [`app/index.html`](app/index.html); a GitHub Pages deployment workflow is configured in [pages.yml](.github/workflows/pages.yml). It reads live supply/decimals from public RPC endpoints for both networks and, after a user clicks Connect, can read the connected wallet's public ZV balance. It is intentionally read-only: no signing, approvals, transfers, staking, rewards, swap, or bridge. Open it from a static HTTPS host or a wallet-compatible browser; local/file previews may block RPC requests or wallet providers. Architecture and remaining security gates: [Ecosystem architecture](docs/ECOSYSTEM-ARCHITECTURE.md).
 
 ## Market status
 
