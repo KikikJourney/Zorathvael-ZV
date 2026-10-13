@@ -1,0 +1,30 @@
+name: BNB contract verification
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "37 8 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bnb-contract-verification
+  cancel-in-progress: true
+
+jobs:
+  verify-bnb-token:
+    name: Verify BNB token read-only
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Query BNB Smart Chain public RPC
+        run: python scripts/verify_bnb_contract.py
