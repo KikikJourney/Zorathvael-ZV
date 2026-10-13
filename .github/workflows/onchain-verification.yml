@@ -17,7 +17,7 @@ concurrency:
 jobs:
   verify-mint:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 5
     steps:
       - name: Check out source
         uses: actions/checkout@v4
@@ -25,5 +25,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Query Solana mainnet (read-only)
+      - name: Query Solana mainnet RPC (read-only)
         run: python scripts/verify_onchain.py
+      - name: Verify indexed token metadata with Solscan Pro API (read-only)
+        env:
+          SOLSCAN_API_KEY: ${{ secrets.SOLSCAN_API_KEY }}
+        run: python scripts/verify_solscan_api.py
