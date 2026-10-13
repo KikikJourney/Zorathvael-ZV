@@ -1,9 +1,9 @@
 # Zorathvael (ZV) — Solana
 
 - **Network:** Solana
-- **Mint:** `7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump`
-- **pump.fun:** https://pump.fun/coin/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump
-- **Solscan:** https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump
+- **Mint:** `7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump`
+- **pump.fun:** https://pump.fun/coin/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump
+- **Solscan:** https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump
 
 ## Last recorded snapshot
 
