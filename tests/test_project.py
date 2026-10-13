@@ -11,6 +11,7 @@ class ProjectIntegrityTests(unittest.TestCase):
     def test_expected_public_documents_exist(self):
         for relative in (
             "README.md",
+            "LICENSE.md",
             "docs/TOKEN-INFO.md",
             "docs/ROADMAP.md",
             "SECURITY.md",
