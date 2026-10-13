@@ -2,7 +2,7 @@
 
 ## Scope
 
-This repository currently contains public documentation for the Zorathvael (ZV) Solana meme-token project. It is not evidence that the token or any third-party service has undergone a security audit.
+This repository contains documentation, read-only on-chain verification scripts, and an early read-only Zorathvael (ZV) web dashboard. The dashboard reads public chain data and, after explicit user action, requests a wallet's public address to read its token balance. It must not request seed phrases/private keys or sign/send transactions. Neither source verification nor these read-only features constitute a smart-contract or product security audit.
 
 ## Reporting a vulnerability
 
@@ -13,10 +13,10 @@ Do not send seed phrases or private keys to anyone, including maintainers. Maint
 ## User safety
 
 - Never enter a seed phrase or private key into a website reached from a DM, advertisement, QR code, or unsolicited message.
-- Verify the full token mint address before swapping.
+- Verify the full token mint/contract address and network before interacting.
 - Beware of fake ZV tokens, fake support accounts, malicious wallet approvals, phishing links, and promises of guaranteed returns.
 - Review transaction details and revoke suspicious wallet approvals using reputable tools.
-- Do not assume that a GitHub repository, token listing, or logo proves a token is safe.
+- Do not assume that a repository, token listing, verified source, or logo proves a token is safe or liquid.
 
 ## Repository security
 
@@ -24,9 +24,9 @@ Do not send seed phrases or private keys to anyone, including maintainers. Maint
 - Use least-privilege permissions for GitHub Actions and integrations.
 - Pin third-party GitHub Actions to reviewed full commit SHAs before using them in sensitive workflows.
 - Review dependency changes and workflow permission changes.
-- Require review for code that can move funds, sign transactions, or access credentials.
+- Require review and independent security assessment for code that can move funds, sign transactions, bridge assets, or access credentials.
 - Publish security claims only when supported by evidence.
 
 ## Supported versions
 
-The repository is documentation-first. Security reports concerning this repository's files and any future code are welcome.
+Security reports concerning repository files, the dashboard, and future code are welcome.
