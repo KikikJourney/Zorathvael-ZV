@@ -8,70 +8,61 @@
 <p align="center">Audience → Holders → Community → Ecosystem.</p>
 
 <p align="center">
-  <a href="https://pump.fun/coin/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump">pump.fun</a> ·
+  <a href="https://pump.fun/coin/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump">Solana / pump.fun</a> ·
   <a href="https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump">Solscan</a> ·
+  <a href="https://bscscan.com/token/0x2c6b35f3e70500b1189e331547b493904c598888">BNB Chain / BscScan</a> ·
   <a href="https://github.com/KikikJourney/Zorathvael-ZV/issues">Issues</a>
 </p>
 
-> **Risk notice:** ZV is a meme token and may be highly volatile or lose all of its value. This repository is informational, not financial, investment, legal, or tax advice. Do your own independent research. Never share seed phrases or private keys.
+> **Risk notice:** ZV is a crypto-token project and may be highly volatile or lose all of its value. This repository is informational, not financial, investment, legal, or tax advice. Never share seed phrases or private keys.
 
-## Token identity
+## Project and network overview
 
-| Field | Value |
-|---|---|
-| Project name | Zorathvael |
-| Ticker | ZV |
-| Network | Solana |
-| Mint address | `7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump` |
-| Token page | [pump.fun](https://pump.fun/coin/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump) |
-| Explorer | [Solscan](https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump) |
+This repository is the shared documentation home for the Zorathvael project across two separate networks. **The Solana mint and the BNB Smart Chain contract are different on-chain assets.** A shared name, ticker, logo, or repository does not make them the same token, automatically bridge them, or combine their supplies, liquidity, holders, or ownership.
 
-Always compare the full mint address before interacting with a token. A name, ticker, or logo alone does not uniquely identify a token.
+| Field | Solana | BNB Smart Chain |
+|---|---|---|
+| Project name | Zorathvael | Reported as Zorathvael; on-chain metadata not yet independently verified |
+| Ticker | ZV (project label) | ZV (project label; on-chain metadata not yet independently verified) |
+| Network | Solana | BNB Smart Chain (BSC) |
+| On-chain identifier | `7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump` | `0x2c6b35f3e70500b1189e331547b493904c598888` |
+| Explorer | [Solscan](https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEjz1pump) | [BscScan](https://bscscan.com/token/0x2c6b35f3e70500b1189e331547b493904c598888) |
+| Supply status | 1,000,000,000 tokens observed in RPC snapshot dated 2026-10-12 18:32:32 UTC | Project owner reports 1,000,000 tokens; **not yet verified on-chain** |
 
-## Purpose of this repository
-
-This is the public documentation and project-maintenance home for Zorathvael (ZV). Its purpose is to make project information easier to inspect, track, and improve transparently.
-
-**This repository does not claim that ZV has its own blockchain, validator network, node software, audited smart contract, utility, exchange listing, or guaranteed roadmap delivery.** ZV is documented here as a Solana token. Any additional functionality must be implemented, tested, and documented before being described as live.
+- [Solana token details](chains/solana.md)
+- [BNB Smart Chain token details](chains/bnb-smart-chain.md)
+- [Combined token information and verification status](docs/TOKEN-INFO.md)
+- [On-chain verification procedure](docs/VERIFICATION.md)
 
 ## Verification status
 
-The mint address above was supplied by the project owner and recorded here. A read-only Solana mainnet-beta RPC check recorded decimals, supply, token program, and mint/freeze authority status on 2026-10-12 18:32:32 UTC. Display metadata, liquidity, holder distribution, and market claims are not asserted as verified. See [Token Information](docs/TOKEN-INFO.md) for the verification procedure.
+The Solana mint has a dated read-only RPC snapshot documented in [Token Information](docs/TOKEN-INFO.md). The BNB contract address and 1,000,000-token supply were supplied by the project owner; the BNB contract's name, symbol, decimals, actual supply, source-code verification status, and administrative privileges still need independent checks. Do not treat user-provided details as verified blockchain facts.
 
-- [x] Public repository established.
-- [x] Token identifier and risk disclosures documented.
-- [x] Security and contribution guidance added.
-- [x] Vector brand mark committed to `assets/logo.svg`.
-- [x] Mint program, decimals, supply, and mint/freeze authority snapshot recorded in [Token Information](docs/TOKEN-INFO.md).
-- [ ] Display metadata, liquidity, holder distribution, and market claims independently verified.
-- [ ] Official community channels verified and linked.
-- [ ] Any future code or integrations independently reviewed and tested.
+A blockchain explorer page is a starting point for verification, not by itself a security audit or proof of legitimacy, ownership, liquidity, or value. Always compare the full address before interacting with a token.
 
-A checklist item is not an audit or endorsement. Do not interpret pending tasks as completed.
+## Purpose and limitations
 
-## Repository map
-
-- [Token information and verification checklist](docs/TOKEN-INFO.md)
-- [On-chain verification procedure](docs/VERIFICATION.md)
-- [FAQ](docs/FAQ.md)
-- [Roadmap](docs/ROADMAP.md)
-- [Security policy](SECURITY.md)
-- [Contribution guide](CONTRIBUTING.md)
-- [FAQ](docs/FAQ.md)
-- [Community Code of Conduct](CODE_OF_CONDUCT.md)
-- `assets/logo.svg` — scalable vector brand mark
+This is the public documentation and project-maintenance home for Zorathvael (ZV). It does not claim that ZV has its own blockchain, validator network, audited smart contract, bridge, utility, exchange listing, or guaranteed roadmap delivery. No cross-chain bridge or supply equivalence is implied by documenting both networks together.
 
 ## Security principles
 
 1. Never request, store, commit, or share anyone's seed phrase, private key, wallet export, or access token.
-2. Verify addresses from more than one trusted source and inspect the full mint address.
-3. Never publish unverified claims about token supply, authorities, liquidity locks, audits, partnerships, or utility.
+2. Verify each network's complete address independently; names, tickers, and logos do not uniquely identify a token.
+3. Never publish unverified claims about supply, authorities, liquidity locks, audits, partnerships, or utility.
 4. Treat unsolicited DMs, fake support accounts, airdrops, and links as potentially malicious.
 5. Document changes through reviewable commits. Do not fake activity, holders, endorsements, or audit status.
 
+## Repository map
+
+- `chains/solana.md` — Solana mint and snapshot
+- `chains/bnb-smart-chain.md` — BNB contract and verification checklist
+- `docs/TOKEN-INFO.md` — combined network comparison
+- `docs/VERIFICATION.md` — Solana verifier procedure
+- `assets/logo.svg` — existing vector brand mark (not the original pump.fun image)
+- `SECURITY.md` — security policy
+- `CONTRIBUTING.md` — contribution guide
+- `CODE_OF_CONDUCT.md` — community code of conduct
+
 ## Disclaimer
 
-Zorathvael (ZV) is presented as a meme-token project. Cryptocurrency assets are risky, speculative, and may be illiquid. Nothing in this repository is a promise of profit, price performance, liquidity, exchange listing, or future development. Information can become outdated; independently verify on-chain facts before acting.
-
----
-Maintained publicly by the repository owner and contributors.
+Cryptocurrency assets are risky, speculative, and may be illiquid. Nothing in this repository is a promise of profit, price performance, liquidity, exchange listing, or future development. Information can become outdated; independently verify on-chain facts before acting.
