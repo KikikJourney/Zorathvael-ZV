@@ -21,6 +21,7 @@ class ProjectIntegrityTests(unittest.TestCase):
             "assets/1791818551418.png",
             "scripts/verify_onchain.py",
             "scripts/verify_bnb_contract.py",
+            "scripts/verify_bnb_etherscan.py",
             ".github/workflows/bnb-verification.yml",
             "chains/solana.md",
             "chains/bnb-smart-chain.md",
@@ -68,6 +69,16 @@ class ProjectIntegrityTests(unittest.TestCase):
             with self.subTest(path=relative):
                 self.assertIn("1,000,000,000 ZV", text)
                 self.assertNotRegex(text, r"(?<![0-9,])1,000,000 ZV(?![0-9,])")
+
+    def test_etherscan_v2_check_uses_secret_and_bnb_chain(self):
+        script = (ROOT / "scripts/verify_bnb_etherscan.py").read_text(encoding="utf-8")
+        workflow = (ROOT / ".github/workflows/bnb-verification.yml").read_text(encoding="utf-8")
+        self.assertIn('CHAIN_ID = "56"', script)
+        self.assertIn("https://api.etherscan.io/v2/api", script)
+        self.assertIn('os.environ.get("ETHERSCAN_API_KEY"', script)
+        self.assertIn("secrets.ETHERSCAN_API_KEY", workflow)
+        self.assertNotIn("eth_sendRawTransaction", script)
+        self.assertIn("not an independent security audit", script)
 
     def test_markdown_relative_links_resolve(self):
         markdown_files = [ROOT / "README.md", ROOT / "SECURITY.md",
