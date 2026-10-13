@@ -14,7 +14,7 @@
   <a href="https://github.com/KikikJourney/Zorathvael-ZV/issues">Issues</a>
 </p>
 
-> **Risk notice:** ZV is a crypto-token project and may be highly volatile or lose all of its value. This repository is informational, not financial, investment, legal, or tax advice. Never share seed phrases or private keys.
+> **Risk notice:** ZV is a meme token and may be highly volatile or lose all of its value. This repository is informational, not financial, investment, legal, or tax advice. Never share seed phrases or private keys.
 
 ## Project and network overview
 
@@ -27,7 +27,7 @@ This repository is the shared documentation home for the Zorathvael project acro
 | Network | Solana | BNB Smart Chain (BSC) |
 | On-chain identifier | `7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump` | `0x2c6b35f3e70500b1189e331547b493904c598888` |
 | Explorer | [Solscan](https://solscan.io/token/7dWLzsJkWNYnLShY7QqqPqeWSapzv2nYBjknEj1pump) | [BscScan](https://bscscan.com/token/0x2c6b35f3e70500b1189e331547b493904c598888) |
-| Supply status | 1,000,000,000 tokens observed in RPC snapshot dated 2026-10-12 18:32:32 UTC | Project owner reports 1,000,000 tokens; **not yet verified on-chain** |
+| Supply status | 1,000,000,000 tokens observed in RPC snapshot dated 2026-10-12 18:32:32 UTC | 1,000,000,000 tokens observed via RPC; project owner previously reported 1,000,000 (discrepancy documented) |
 
 - [Solana token details](chains/solana.md)
 - [BNB Smart Chain token details](chains/bnb-smart-chain.md)
