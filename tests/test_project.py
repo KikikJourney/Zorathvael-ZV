@@ -63,7 +63,7 @@ class ProjectIntegrityTests(unittest.TestCase):
 
     def test_bnb_expected_supply_and_docs_are_consistent(self):
         verifier = (ROOT / "scripts/verify_bnb_contract.py").read_text(encoding="utf-8")
-        self.assertRegex(verifier, r'EXPECTED_SUPPLY\\s*=\\s*Decimal\\("1000000000"\\)')
+        self.assertRegex(verifier, r'EXPECTED_SUPPLY\s*=\s*Decimal\("1000000000"\)')
         for relative in ("README.md", "docs/TOKEN-INFO.md",
                          "docs/VERIFICATION.md", "chains/bnb-smart-chain.md"):
             content = (ROOT / relative).read_text(encoding="utf-8")
@@ -96,7 +96,7 @@ class ProjectIntegrityTests(unittest.TestCase):
     def test_markdown_relative_links_resolve(self):
         markdown_files = [ROOT / "README.md", ROOT / "SECURITY.md",
                           ROOT / "CONTRIBUTING.md", *((ROOT / "docs").glob("*.md"))]
-        pattern = re.compile(r"\\[[^\\]]+\\]\\(([^)]+)\\)")
+        pattern = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
         for file in markdown_files:
             content = file.read_text(encoding="utf-8")
             for target in pattern.findall(content):
