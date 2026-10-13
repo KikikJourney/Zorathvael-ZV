@@ -46,6 +46,16 @@ class ProjectIntegrityTests(unittest.TestCase):
         self.assertIn("promise of profit", readme)
         self.assertIn("meme token", readme)
 
+    def test_bnb_expected_supply_and_docs_are_consistent(self):
+        verifier = (ROOT / "scripts/verify_bnb_contract.py").read_text(encoding="utf-8")
+        self.assertRegex(verifier, r'EXPECTED_SUPPLY\s*=\s*Decimal\("1000000000"\)')
+        for relative in ("README.md", "docs/TOKEN-INFO.md",
+                         "docs/VERIFICATION.md", "chains/bnb-smart-chain.md"):
+            text = (ROOT / relative).read_text(encoding="utf-8")
+            with self.subTest(path=relative):
+                self.assertIn("1,000,000,000 ZV", text)
+                self.assertNotRegex(text, r"(?<![0-9,])1,000,000 ZV(?![0-9,])")
+
     def test_markdown_relative_links_resolve(self):
         markdown_files = [ROOT / "README.md", ROOT / "SECURITY.md",
                           ROOT / "CONTRIBUTING.md", *((ROOT / "docs").glob("*.md"))]
