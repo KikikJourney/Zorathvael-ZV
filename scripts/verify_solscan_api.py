@@ -33,8 +33,22 @@ def fetch_metadata() -> dict:
         with urllib.request.urlopen(request, timeout=25) as response:
             body = json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as exc:
-        # Do not print request headers or credentials.
-        raise RuntimeError(f"Solscan API returned HTTP {exc.code}. Check key access, plan, and rate limits.") from exc
+        # Read only the provider's error body; never print request headers or credentials.
+        try:
+            error_body = json.loads(exc.read().decode("utf-8"))
+            error_info = error_body.get("errors") if isinstance(error_body, dict) else None
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            error_info = None
+        if exc.code == 401:
+            raise RuntimeError(
+                "Solscan API returned HTTP 401 (authentication failed). The script is using the v2.0 "
+                "endpoint and token header; verify the secret is the current API Management key, "
+                "that it was not rotated, and that API access is activated on the Solscan account. "
+                f"Provider error details: {error_info!r}"
+            ) from exc
+        raise RuntimeError(
+            f"Solscan API returned HTTP {exc.code}. Provider error details: {error_info!r}"
+        ) from exc
     except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError) as exc:
         raise RuntimeError(f"Solscan API request failed: {type(exc).__name__}: {exc}") from exc
     if not isinstance(body, dict) or body.get("success") is not True:
