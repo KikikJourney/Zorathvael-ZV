@@ -34,13 +34,15 @@ The supply figure for **each network is one billion ZV**. The values above are n
 
 ## Ecosystem dashboard
 
-The first functional ecosystem interface is [`app/index.html`](app/index.html); a GitHub Pages deployment workflow is configured in [pages.yml](.github/workflows/pages.yml). It reads live supply/decimals from public RPC endpoints for both networks and, after a user clicks Connect, can read the connected wallet's public ZV balance. It is intentionally read-only: no signing, approvals, transfers, staking, rewards, swap, or bridge. Open it from a static HTTPS host or a wallet-compatible browser; local/file previews may block RPC requests or wallet providers. Architecture and remaining security gates: [Ecosystem architecture](docs/ECOSYSTEM-ARCHITECTURE.md).
+The first functional ecosystem interface is [`app/index.html`](app/index.html); a GitHub Pages deployment workflow is configured in [pages.yml](.github/workflows/pages.yml). It reads live supply/decimals from public RPC endpoints for both networks and, after a user clicks Connect, can read the connected wallet's public ZV balance. It is intentionally read-only: no signing, approvals, transfers, staking, rewards, swap, or bridge. Open it from a static HTTPS host or a wallet-compatible browser; local/file previews may block RPC requests or wallet providers. Architecture and remaining security gates: [Ecosystem architecture](docs/ECOSYSTEM-ARCHITECTURE.md) and [preliminary BNB security review](docs/BNB-PRELIMINARY-SECURITY-REVIEW.md).
 
 ## Market status
 
 A token page or deployed contract does **not** by itself prove that a usable buy/sell market exists. Pool liquidity, swap routing, actual trades, holder distribution, and current market status must be checked independently on each network. Do not interpret transfers alone as proof of purchases, and do not claim buyers, liquidity, or trading activity without evidence.
 
 ## Verification status
+
+- **Dashboard publishing:** the GitHub Pages build artifact succeeded, but deployment returned HTTP 404 because GitHub Pages is not enabled for this repository. The workflow is ready; enable Pages in repository Settings → Pages, then rerun [Deploy Zorathvael dashboard](https://github.com/KikikJourney/Zorathvael-ZV/actions/workflows/pages.yml). Public hosting is not claimed until a deployment succeeds.
 
 - **Solana:** a read-only mainnet RPC snapshot dated 2026-10-12 recorded 6 decimals, total supply of 1,000,000,000 ZV, and null mint/freeze authorities. This is a point-in-time check, not a security audit or market-status check.
 - **BNB Smart Chain:** a read-only RPC check dated 2026-10-13 returned name `Zorathvael`, symbol `ZV`, 18 decimals, total supply of 1,000,000,000 ZV, and owner/getOwner result `0xe2ce6ab80874fa9fa2aae65d277dd6b8e65c9de0`. BscScan marks the TokenV3 minimal-proxy contract source as verified and identifies implementation `0x88881b6f03090462a969eC7f48385744Eeb63333`. The owner address does not identify a real-world person, and source verification is not a security audit. Implementation-level privileged controls still require review.
