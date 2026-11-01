@@ -35,7 +35,7 @@ jobs:
           touch _site/.nojekyll
           test -s _site/index.html
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _site
   deploy:
